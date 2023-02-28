@@ -27,14 +27,14 @@ def test_song_get_runtime():
     the song
     """
     song = Song('You Oughta Know', 120, 'rock')
-    assert song.get_runtime() == 'You Oughta Know'
+    assert song.get_runtime() == 120
 
 def test_song_get_genre():
     """
     get_genre() should return the genre of the song
     """
     song = Song('You Oughta Know', 120, 'rock')
-    assert song.get_gengre() == 'rock'
+    assert song.get_genre() == 'rock'
 
 def test_song_get_record():
     """
@@ -45,6 +45,7 @@ def test_song_get_record():
     record = Record('jagged little pill', alanis, 1995)
     song = Song('You Oughta Know', 120, 'rock')
     record.songs = [song]
+    song.record = record
     assert song.get_record() == record
 
 def test_song_get_artist():
@@ -56,4 +57,5 @@ def test_song_get_artist():
     record = Record('jagged little pill', alanis, 1995)
     song = Song('You Oughta Know', 120, 'rock')
     record.songs = [song]
+    song.record = record
     assert song.get_artist() == alanis
